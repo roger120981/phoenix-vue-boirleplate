@@ -72,4 +72,5 @@ config :phdemo, Phdemo.Repo,
   password: "postgres",
   database: "phdemo_dev",
   hostname: "localhost",
+  port: 5433,
   pool_size: 10
