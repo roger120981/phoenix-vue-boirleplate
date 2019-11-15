@@ -15,3 +15,12 @@ import "phoenix_html"
 //
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
+
+// Import Vue and Message Component
+import Vue from "vue";
+import Message from "./components/Message.vue";
+
+// Create Vue instance and mounted in app div.
+new Vue({
+  render: h => h(Message)
+}).$mount("#app")
