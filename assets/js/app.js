@@ -16,11 +16,33 @@ import "phoenix_html"
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
 
-// Import Vue and Message Component
+// Import Vue and Example Component
 import Vue from "vue";
+import Example from '@/components/Example';
+
+Vue.config.productionTip = false;
+Vue.component(Example.name, Example); // Registrar el componente de forma global
+
+window.Vue = Vue;
+new Vue({ el: '#app' });
+
+// Usar render function
+/*
 import Message from "./components/Message.vue";
 
 // Create Vue instance and mounted in app div.
 new Vue({
   render: h => h(Message)
-}).$mount("#app")
+}).$mount("#app")*/
+
+// Cargar recursivamente con webpack
+/*const files = require.context('./components/', true, /\.vue$/i);
+files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+document.addEventListener('DOMContentLoaded', function(event) {
+  const app = new Vue({
+      el: '#app',
+  });
+});
+console.log(files.keys());*/
+
+

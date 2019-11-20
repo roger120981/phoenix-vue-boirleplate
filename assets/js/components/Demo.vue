@@ -1,16 +1,20 @@
 <template>
   <div class="vue-message">
-    <button @click="sayHello()">Click me</button>
+    <button @click="sayHello()">Click me 2</button>
     <div v-if="showMessage">{{ message }}</div>
+	
   </div>
 </template>
 
 <script>
 export default {
-  name: "message",
+  name: "demo",
+  props: {
+	title: String,
+  },
   data() {
     return {
-      message: "Hello from Vue!",
+      message: "HELLOOOOOOOOOOOOOO!",
       showMessage: false
     }
   },
@@ -20,7 +24,7 @@ export default {
     }
   },
   created() {
-    console.log("Vue component created");
+    console.log("Vue demo component created");
   }
 }
 </script>
